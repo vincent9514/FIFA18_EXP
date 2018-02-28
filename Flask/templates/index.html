@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='grid.css') }}">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='ionicons.min.css') }}">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='animate.css') }}">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='queries.css') }}">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <title>FIFA18_Prediction</title>
+    </head>
+    <body>
+        <header style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{url_for("static", filename="img/FIFA18_background.jpg")}}); background-size: 100%; background-position: center; height: 100vh; background-attachment: fixed;">
+
+            
+            <nav>
+                <div class="row">
+                    <img src="{{ url_for('static', filename = 'img/fifa18_logo.png') }}" alt="FIFA logo" class="logo">
+                    <img src="{{ url_for('static', filename = 'img/fifa18_logo.png') }}" alt="logo" class="logo-black">
+                    <ul class="main-nav js--main-nav">
+                        <li><a href="https://www.easports.com/fifa" target="_blank">about us</a></li>
+                        <li><a href="https://www.kaggle.com/thec03u5/fifa-18-demo-player-dataset" target="_blank">Model</a></li>
+                        <li><a href="https://www.stat.berkeley.edu/~aldous/Research/Ugrad/Yuan_He.pdf" target="_blank">impact</a></li>
+                        <li><a href="http://www.mccormick.northwestern.edu/analytics/overview/meet-students/class-of-2018.html" target="_blank">connect</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                </div>
+            </nav>
+            <div class="hero-text-box" style="margin-left:760px; width: auto; margin-top: 80px">
+                <h1>This is the Web App to predict soccer players' market value</h1>
+                <a class="btn btn-full js--scroll-to-plans" href="https://www.fifaindex.com/" target="_blank">FIFA18 Database</a>
+                <a class="btn btn-ghost js--scroll-to-start" href="#">Wanna Predict?</a>
+            </div>
+            <div class="input">     
+            </div>
+            
+            
+        </header>
+        
+        <section class="section-form js--section-features">
+            <div class="row">
+                <h2>Please input player's attributes:</h2>
+            </div>
+            <div class="row">
+                <!-- 
+                <p>username: {{username}}</p>
+                <p>gender: {{gender}}</p>
+                <p>age: {{age}}</p>
+                <div style="margin-left:250px; width: auto;">
+                    <form onsubmit="return false" oninput="o.value = parseInt(a.value) + parseInt(b.value)">
+                        <input name="a" type="number" step="any"> +
+                        <input name="b" type="number" step="any"> =
+                        <output name="o"></output>
+                    </form>
+                
+                </div>
+
+                Write your comments here -->
+               
+                
+                
+                <form method="post" action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="Age">Age</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Age" id="Age" placeholder="15-35" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="">Wage($)</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Wage" id="Wage" placeholder="$" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Overall_Rating</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Overall_Rating" id="Overall_Rating" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="Agility">Potential</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Potential" id="Potential" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="">Composure</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Composure" id="Composure" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Marking</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Marking" id="Marking" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Reactions</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Reactions" id="Reactions" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="Acceleration">Vision</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Vision" id="Vision" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="">Volleys</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Volleys" id="Volleys" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Num_Positions</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="Num_Positions" id="Num_Positions" placeholder="1-4" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">Position</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="find-us" id="find-us">
+                                <option value="ST" selected>ST</option>
+                                <option value="RW">RW</option>
+                                <option value="LW">LW</option>
+                                <option value="GK">GK</option>
+                                <option value="CDM">CDM</option>
+                                <option value="CB">CB</option>
+                                <option value="RM">RM</option>
+                                <option value="CM">CM</option>
+                                <option value="LM">LM</option>
+                                <option value="LB">LB</option>
+                                <option value="CAM">CAM</option>
+                                <option value="RB">RB</option>
+                                <option value="CF">CF</option>
+                                <option value="RB">RWB</option>
+                                <option value="CF">LWB</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Submit!">
+                        </div>
+                    </div>
+                    
+                </form>
+                
+            </div>
+        </section>
+        
+        <footer>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="https://www.linkedin.com/feed/">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">iOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    This webpage was created for the course "MSIA423 Analytics Value Chain" by Vincent Wang. No copyrights here.<br>
+                    This webpage is for you! So go and do whatever you want with it and have fun.
+                </p>
+                <p>
+                    Build with <i class="ion-ios-heart" style="color: #ea0000; padding: 0 3px;"></i> in the beautiful city of Evanston, IL, Feb 2018.
+                </p>
+            </div>
+        </footer>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src= "{{ url_for('static',filename='script.js') }}"></script>
+    </body>  
+    
+</html>
